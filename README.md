@@ -5,7 +5,7 @@
 Para hacer el auxiliar clone este repositorio
 con:
 ```shell
-git clone https://github.com/dcc-cc3002/auxiliar2_2026_1.git
+git clone https://github.com/dcc-cc3002/auxiliar2_2026_2.git
 ```
 
 El repositorio cuenta con dos ramas `master` donde
