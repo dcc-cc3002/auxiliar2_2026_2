@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="Auxiliar_1-2025-1" />
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="Auxiliar2_2026_1,Auxiliar2_2026_1.main,Auxiliar2_2026_1.test,Auxiliar_1-2025-1" />
   </component>
 </project>

@@ -4,5 +4,5 @@ ThisBuild / scalaVersion := "3.3.5"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "Auxiliar2_2025_2"
+    name := "Auxiliar2_2026_1"
   )
