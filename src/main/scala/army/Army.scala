@@ -4,6 +4,15 @@ import soldier.Soldier
 
 import scala.collection.mutable.ArrayBuffer
 
+/**
+ * Represents an army that manages a collection of soldiers.
+ *
+ * An army has a name and maintains a mutable roster of soldiers that can
+ * join or leave at any time.
+ *
+ * @param name the name of the army.
+ * @param soldiers the list of soldiers currently serving in the army
+ */
 class Army (val name: String, val soldiers: ArrayBuffer[Soldier]) {
 
   def join(soldier: Soldier): Unit = {
