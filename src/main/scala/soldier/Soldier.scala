@@ -22,6 +22,13 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
 
   var army: Army = null
 
+  /**
+   * Attacks another soldier, reducing their hp by this soldier's attack value.
+   *
+   * If the target's hp drops to 0 or below, the target dies and leaves their army.
+   *
+   * @param soldier the target soldier to attack.
+   */
   def attackSoldier(soldier: Soldier): Unit = {
     val newHp: Int = soldier.hp - attack
     if (newHp <= 0) {
@@ -32,6 +39,14 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
     }
   }
 
+  /**
+   * Joins the given army.
+   *
+   * If the soldier already belongs to an army, they leave it first
+   * before joining the new one.
+   *
+   * @param newArmy the army to join.
+   */
   def joinArmy(newArmy: Army): Unit = {
     if (army != null) {
       this.leaveArmy()
@@ -40,6 +55,11 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
     army = newArmy
   }
 
+  /**
+   * Leaves the current army.
+   *
+   * If the soldier does not belong to any army, this method does nothing.
+   */
   def leaveArmy(): Unit = {
     if (this.army != null) {
       army.leave(this)
@@ -47,6 +67,11 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
     }
   }
 
+  /**
+   * Marks this soldier as dead.
+   *
+   * Then leaves the army
+   */
   private def die(): Unit = {
     // Este método también es privado, dado que se utiliza
     //  únicamente dentro de la clase Soldier.
