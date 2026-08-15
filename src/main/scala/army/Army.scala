@@ -15,10 +15,22 @@ import scala.collection.mutable.ArrayBuffer
  */
 class Army (val name: String, val soldiers: ArrayBuffer[Soldier]) {
 
+  /**
+   * Adds a soldier to the army roster.
+   *
+   * @param soldier the soldier to add.
+   */
   def join(soldier: Soldier): Unit = {
     soldiers += soldier
   }
 
+  /**
+   * Removes a soldier from the army roster.
+   *
+   * If the soldier is not in the army, this method does nothing.
+   *
+   * @param soldier the soldier to remove.
+   */
   def leave(soldier: Soldier): Unit = {
     // Dado que requerimos eliminar un soldado específico de la lista,
     // Primero nos encargamos de buscarlo en esta.
