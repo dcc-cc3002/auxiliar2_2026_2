@@ -16,9 +16,10 @@ import army.Army
  * @param isAlive     the value that indicates whether a soldier is alive or dead
  */
 class Soldier (var hp: Int, val name: String, val attack: Int, private var isAlive: Boolean = true){
-  // En el constructor, la variable isAlive es private
-  // dado que solo se utiliza dentro de la misma clase.
-  // Es decir, solo Soldier la modifica.
+  // En el constructor, la variable isAlive es private (privada) dado que representa el estado interno de Soldier.
+  // No es necesario (ni queremos) que otras clases puedan consultar o modificar su valor directamente.
+  //
+  // En este caso, se modifica únicamente dentro del método die(), correspondiente a un método interno de la clase Soldier.
 
   var army: Army = null
 
@@ -73,8 +74,10 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
    * Then leaves the army
    */
   private def die(): Unit = {
-    // Este método también es privado, dado que se utiliza
-    //  únicamente dentro de la clase Soldier.
+    // die() es private porque es una operación interna de Soldier.
+    // En este caso, no queremos que código externo pueda hacer que un Soldier muera
+    // directamente; este método solo debe ser utilizado por la lógica
+    // interna de la clase, por ejemplo desde attackSoldier().
     isAlive = false
     this.leaveArmy()
   }
