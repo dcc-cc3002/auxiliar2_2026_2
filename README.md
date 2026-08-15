@@ -16,7 +16,6 @@ Para ver la pauta:
 ```shell
 git checkout solution
 ```
-
 Para volver al esqueleto:
 ```shell
 git checkout master

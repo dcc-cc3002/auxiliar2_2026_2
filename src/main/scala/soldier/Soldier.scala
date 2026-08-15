@@ -32,10 +32,14 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
    */
   def attackSoldier(soldier: Soldier): Unit = {
     val newHp: Int = soldier.hp - attack
+    // Revisamos si el daño causado deja la vida del soldado en 0 o menor valor.
     if (newHp <= 0) {
+      // Si es así, entonces la dejamos efectivamente en 0 (para que no sea un valor negativo)
+      // Y luego invocamos el método asociado a la muerte del soldado.
       soldier.hp = 0
       soldier.die()
     } else {
+      // Si el valor no mata al soldado, simplemente le causa el daño.
       soldier.hp = newHp
     }
   }
@@ -51,6 +55,9 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
   def joinArmy(newArmy: Army): Unit = {
     if (army != null) {
       this.leaveArmy()
+      // this se utiliza para que el método sea invocado sobre la instancia actual de la clase.
+      // Entonces, si un soldado (la instancia generada de: new Soldier(...)) decide entrar a un nuevo army,
+      // primero tiene que él mismo (this) abandonar el army en el que se encuentra.
     }
     newArmy.join(this)
     army = newArmy
