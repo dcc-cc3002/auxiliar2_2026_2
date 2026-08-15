@@ -35,6 +35,7 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
   }
 
   private def die(): Unit = {
-
+    // Este método también es privado, dado que se utiliza
+    //  únicamente dentro de la clase Soldier.
   }
 }
