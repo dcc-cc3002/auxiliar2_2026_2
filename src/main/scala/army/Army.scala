@@ -45,4 +45,21 @@ class Army (val name: String, val soldiers: ArrayBuffer[Soldier]) {
     // En este caso específico, también funcionaría, puesto que un soldado debería
     // estar enlistado únicamente una vez en el Army.
   }
+
+  /**
+   * Prints the army roster to standard output.
+   *
+   * Displays the army name followed by a comma-separated list of soldier names.
+   * If the army has no soldiers, displays "(vacío)" instead.
+   */
+  def showRoster(): Unit = {
+    if (soldiers.nonEmpty) {
+      println("The roster is:")
+      for soldier <- soldiers do {
+        println(s"${soldier.name}")
+      }
+    } else {
+      println("The roster is empty.")
+    }
+  }
 }
