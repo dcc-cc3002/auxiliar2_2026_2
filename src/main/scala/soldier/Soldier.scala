@@ -1,0 +1,5 @@
+package soldier
+
+class Soldier {
+
+}

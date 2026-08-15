@@ -1,0 +1,5 @@
+package army
+
+class Army {
+
+}
