@@ -21,4 +21,20 @@ class Soldier (var hp: Int, val name: String, val attack: Int, private var isAli
   // Es decir, solo Soldier la modifica.
 
   var army: Army = null
+
+  def attackSoldier(soldier: Soldier): Unit = {
+
+  }
+
+  def joinArmy(newArmy: Army): Unit = {
+
+  }
+
+  def leaveArmy(): Unit = {
+
+  }
+
+  private def die(): Unit = {
+
+  }
 }
